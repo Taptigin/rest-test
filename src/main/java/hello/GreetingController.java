@@ -39,7 +39,7 @@ public class GreetingController {
 
     @RequestMapping(value = "/ex/post", method = RequestMethod.POST)
     @ResponseBody
-    public List<String> postFoos() {
+    public List<String> postPost() {
         List<String> list = new ArrayList<>();
         list.add("Post post post");
         list.add("aaa aaa aaa");
