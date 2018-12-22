@@ -18,14 +18,14 @@ public class GreetingController {
                 String.format(template, name));
     }
 
-    @RequestMapping("/trpk")
-    public long trpk(@RequestParam(value = "ints")long ints){
-        System.out.println(ints);
-        return ints;
+    @RequestMapping("/longs")
+    public long trpk(@RequestParam(value = "ints")long longs){
+        System.out.println(longs);
+        return longs;
     }
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello(){
-        return "hello";//123
+        return "hello";
     }
 }
