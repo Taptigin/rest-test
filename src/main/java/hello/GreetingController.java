@@ -1,6 +1,7 @@
 package hello;
 
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,13 +41,10 @@ public class GreetingController {
     }
 
 
-    @RequestMapping("/employees")
-    public String handleEmployeeRequestByDept(@RequestParam("dept") String deptName,
-                                              @RequestParam("state") String stateCode,
-                                              Model map) {
-        map.addAttribute("msg", "employees request by dept and state code : " +
-                deptName + ", " + stateCode);
-        return map.toString();
+    @RequestMapping("/employees/{id}/paystubsByMonths")
+    public String handleRequest4 (@PathVariable("id") String employeeId,
+                                  @RequestParam("months") int previousMonths) {
+        return "empId = " + employeeId + " " + "epmMonths " + previousMonths;
     }
 
 }
