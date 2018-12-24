@@ -1,8 +1,10 @@
 package hello;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.GET;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -27,6 +29,8 @@ public class GreetingController {
         return longs;
     }
 
+    @GET
+    @ApiOperation(value = "hello")
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello(){
         return "hello";
