@@ -1,11 +1,13 @@
 package hello;
 
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Api
 @RestController
 public class GreetingController {
     private static final String template = "Hello, %s!";
